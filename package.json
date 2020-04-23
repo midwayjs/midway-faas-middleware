@@ -1,0 +1,47 @@
+{
+  "name": "midway-faas",
+  "version": "1.0.0",
+  "devDependencies": {
+    "lerna": "3",
+    "@midwayjs/faas": "^0.2.76",
+    "@midwayjs/faas-dev-pack": "^0.2.76",
+    "@types/chai": "^4.1.7",
+    "@types/lodash": "^4.14.119",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "koa": "^2.11.0",
+    "nyc": "^13.1.0",
+    "supertest": "^4.0.2",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "test": "lerna run test",
+    "cov": "nyc lerna run cov --concurrency=1",
+    "ci": "npm run bootstrap && npm run build && npm run cov",
+    "purge": "npm run clean && rm -rf node_modules",
+    "reset": "npm run purge && npm i && npm run ci",
+    "canary": "sh scripts/publish.sh --canary",
+    "beta": "sh scripts/publish.sh --npm-tag beta --force-publish=*",
+    "next": "sh scripts/publish.sh --npm-tag next",
+    "release": "rm -f ./packages/.DS*; sh scripts/publish.sh",
+    "bootstrap": "rm -f ./packages/.DS*; lerna bootstrap --hoist",
+    "clean": "lerna clean --yes; rm -rf ./packages/**/package-lock.json; rm -rf ./packages/**/dist; rm -rf ./packages/**/.nyc_output",
+    "updated": "lerna updated",
+    "li": "lerna init",
+    "build": "lerna run build",
+    "autod": "npm run build && lerna run autod"
+  },
+  "homepage": "https://github.com/midway/midway-faas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midway/midway-faas.git"
+  },
+  "engines": {
+    "node": ">= 10.9.0"
+  },
+  "ci": {
+    "version": "10,12,13",
+    "command": "ci"
+  },
+  "license": "MIT"
+}

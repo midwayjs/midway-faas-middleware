@@ -1,0 +1,28 @@
+{
+  "name": "@midwayjs/faas-middleware-static",
+  "version": "0.0.1",
+  "main": "dist/index",
+  "typings": "dist/index.d.ts",
+  "dependencies": {
+    "koa-static-cache": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "midway-bin": "2",
+    "@midwayjs/core": "2",
+    "@midwayjs/decorator": "2",
+    "@midwayjs/faas": "^0.2.76",
+    "@midwayjs/serverless-invoke": "^0.2.76"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "midway-bin build -c",
+    "test": "NODE_ENV=test midway-bin test --ts --full-trace",
+    "cov": "NODE_ENV=unittest midway-bin cov --ts",
+    "clean": "midway-bin clean",
+    "autod": "midway-bin autod"
+  }
+}
