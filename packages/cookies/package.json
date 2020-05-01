@@ -1,11 +1,11 @@
 {
-  "name": "@midwayjs/faas-middleware-static-file",
+  "name": "@midwayjs/faas-middleware-cookies",
   "version": "0.0.1",
   "main": "dist/index",
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@midwayjs/decorator": "2",
-    "koa-static-cache": "^5.0.0"
+    "cookies": "^0.8.0"
   },
   "files": [
     "dist"
@@ -22,6 +22,7 @@
     "test": "NODE_ENV=test midway-bin test --ts --full-trace",
     "cov": "NODE_ENV=unittest midway-bin cov --ts",
     "clean": "midway-bin clean",
-    "autod": "midway-bin autod"
+    "autod": "midway-bin autod",
+    "postinstall": "install.js"
   }
 }
