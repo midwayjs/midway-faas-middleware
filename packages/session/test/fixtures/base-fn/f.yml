@@ -8,8 +8,5 @@ functions:
   test1:
     handler: index.handler
     events:
-      - http: true
-
-package:
-  include:
-    - public/*
+      - http:
+          path: /test

@@ -1,6 +1,5 @@
 import {
   FunctionHandler,
-  FaaSContext,
 } from '@midwayjs/faas';
 
 import { Provide, Inject, Func } from '@midwayjs/decorator';
@@ -8,10 +7,13 @@ import { Provide, Inject, Func } from '@midwayjs/decorator';
 @Provide()
 export class IndexHandler implements FunctionHandler {
   @Inject()
-  ctx: FaaSContext;
+  ctx;
 
-  @Func('index.handler', { middleware: [ '@midwayjs/faas-middleware-static:staticFile' ]} )
+  @Func('index.handler' )
   async handler() {
-    return 'hello world';
+    this.ctx.cookies.set('bbbb', 123);
+    return {
+      test: 1
+    }
   }
 }
