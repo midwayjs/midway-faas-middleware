@@ -6,7 +6,9 @@ import { join } from 'path';
     './config.default'
   ],
   imports: [
-    join(__dirname, '../../../../src')
+    join(__dirname, '../../../../src'),
+    join(__dirname, '../../../../src'),
+    join(__dirname, '../../../../../session/src'),
   ]
 })
 export class ContainerConfiguration {

@@ -1,1 +1,1 @@
-export const middleware = ['fmw:cookies'];
+export const middleware = ['fmw:cookies', 'fmw:session'];

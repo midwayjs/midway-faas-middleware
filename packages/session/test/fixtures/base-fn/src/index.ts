@@ -11,7 +11,9 @@ export class IndexHandler implements FunctionHandler {
 
   @Func('index.handler' )
   async handler() {
-    this.ctx.cookies.set('bbbb', 123);
+    this.ctx.session = {
+      user: 'zhangting'
+    }
     return {
       test: 1
     }

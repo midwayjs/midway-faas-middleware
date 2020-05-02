@@ -1,13 +1,13 @@
 import { Provide, ScopeEnum, Scope, Config, App } from '@midwayjs/decorator';
 import * as session from 'koa-session';
 import { session as SessionConfig } from './config/config.default';
-import { IMidwayCoreApplication } from '@midwayjs/core';
+// import { IMidwayCoreApplication } from '@midwayjs/core';
 
 @Provide('session')
 @Scope(ScopeEnum.Singleton)
 export class Sessioniddlware {
   @App()
-  app: IMidwayCoreApplication;
+  app: any;
 
   @Config('session')
   sessionConfig: typeof SessionConfig;

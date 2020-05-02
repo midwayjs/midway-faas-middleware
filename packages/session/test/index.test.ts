@@ -13,14 +13,11 @@ describe('/test/index.test.ts', () => {
       })
     );
     request(app.callback())
-      .get('/public/index.html')
-      .query({
-        action: 'doTest',
-      })
-      .send({ name: 'zhangting' })
+      .get('/test')
       .expect(200)
       .end((err, res) => {
-        assert(/html/.test(Buffer.from(res.text, 'base64').toString('utf8')))
+        assert(/bbbb=123/.test(res.headers['set-cookie'][0]));
+        assert.deepStrictEqual(res.body, { test: 1 });
         done();
       })
   });

@@ -12,9 +12,7 @@
   ],
   "devDependencies": {
     "midway-bin": "2",
-    "@midwayjs/core": "2",
-    "@midwayjs/faas": "^0.2.76",
-    "@midwayjs/serverless-invoke": "^0.2.76"
+    "@midwayjs/core": "2"
   },
   "license": "MIT",
   "scripts": {
@@ -22,7 +20,6 @@
     "test": "NODE_ENV=test midway-bin test --ts --full-trace",
     "cov": "NODE_ENV=unittest midway-bin cov --ts",
     "clean": "midway-bin clean",
-    "autod": "midway-bin autod",
-    "postinstall": "install.js"
+    "autod": "midway-bin autod"
   }
 }

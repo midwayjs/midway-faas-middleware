@@ -20,8 +20,8 @@ describe('/test/index.test.ts', () => {
       .send({ name: 'zhangting' })
       .expect(200)
       .end((err, res) => {
-        assert(/html/.test(Buffer.from(res.text, 'base64').toString('utf8')))
+        assert(/html/.test(res.text));
         done();
-      })
+      });
   });
 });

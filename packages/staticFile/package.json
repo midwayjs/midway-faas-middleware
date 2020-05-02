@@ -12,9 +12,7 @@
   ],
   "devDependencies": {
     "midway-bin": "2",
-    "@midwayjs/core": "2",
-    "@midwayjs/faas": "^0.2.76",
-    "@midwayjs/serverless-invoke": "^0.2.76"
+    "@midwayjs/core": "2"
   },
   "license": "MIT",
   "scripts": {
