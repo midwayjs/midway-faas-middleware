@@ -20,6 +20,6 @@ export class Sessioniddlware {
           '[fmw-session]: please set `config.session.httpOnly` to true. It is very dangerous if session can read by client JavaScript.'
         );
     }
-    return session(this.sessionConfig);
+    return session(this.sessionConfig, this.app.getWebApp());
   }
 }

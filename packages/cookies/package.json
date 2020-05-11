@@ -1,11 +1,12 @@
 {
   "name": "@midwayjs/faas-middleware-cookies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index",
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@midwayjs/decorator": "2",
-    "cookies": "^0.8.0"
+    "cookies": "^0.8.0",
+    "@midwayjs/component-postinstall": "1"
   },
   "files": [
     "dist"
@@ -20,6 +21,7 @@
     "test": "NODE_ENV=test midway-bin test --ts --full-trace",
     "cov": "NODE_ENV=unittest midway-bin cov --ts",
     "clean": "midway-bin clean",
-    "autod": "midway-bin autod"
+    "autod": "midway-bin autod",
+    "postinstall": "mcp autoconf"
   }
 }
