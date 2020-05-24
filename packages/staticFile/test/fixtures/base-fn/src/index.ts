@@ -9,7 +9,6 @@ export class IndexHandler implements FunctionHandler {
 
   @Func('index.handler', { middleware: ['fmw:staticFile'] })
   async handler() {
-    console.log(this.ctx.path);
     return 'hello world';
   }
 }
