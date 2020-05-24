@@ -8,14 +8,12 @@ export class StaticFile {
   staticConfig;
 
   resolve() {
-    if (this.staticConfig) {
+    if (this.staticConfig?.index) {
       if (!this.staticConfig.alias) {
         this.staticConfig.alias = {};
       }
-      const { prefix, alias } = this.staticConfig;
-      if (prefix && !alias[prefix]) {
-        alias[prefix] = `${prefix.replace(/\/$/g, '')}/index.html`;
-      }
+      const { alias, index, prefix = '/' } = this.staticConfig;
+      alias[prefix] = `${prefix.replace(/\/$/g, '')}/${index.replace(/^\//g, '')}`;
     }
     return staticCache(this.staticConfig);
   }
