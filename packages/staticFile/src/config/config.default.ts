@@ -16,6 +16,7 @@ module.exports = (appInfo) => {
     prefix: '/public/',
     dir: join(appInfo.baseDir, '../public'),
     dynamic: true,
+    index: 'index.html',
     preload: false,
     buffer: true,
     maxFiles: 1000,
