@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "devDependencies": {
     "lerna": "3",
-    "@midwayjs/faas": "next",
-    "@midwayjs/faas-dev-pack": "^0.2.76",
-    "@midwayjs/serverless-invoke": "^0.2.76",
+    "@midwayjs/faas": "^0.3.0",
+    "@midwayjs/faas-dev-pack": "^0.3.0",
+    "@midwayjs/serverless-invoke": "^0.3.0",
     "@types/chai": "^4.1.7",
     "@types/lodash": "^4.14.119",
     "@types/mocha": "^5.2.5",
