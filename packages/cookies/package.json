@@ -1,11 +1,11 @@
 {
-  "name": "@midwayjs/faas-middleware-static-file",
-  "version": "0.0.4",
+  "name": "@midwayjs/faas-middleware-cookies",
+  "version": "0.0.2",
   "main": "dist/index",
   "typings": "dist/index.d.ts",
   "dependencies": {
     "@midwayjs/decorator": "2",
-    "koa-static-cache": "^5.0.0",
+    "cookies": "^0.8.0",
     "@midwayjs/component-postinstall": "1"
   },
   "files": [

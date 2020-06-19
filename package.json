@@ -1,10 +1,11 @@
 {
-  "name": "midway-faas",
+  "name": "midway-faas-middleware",
   "version": "1.0.0",
   "devDependencies": {
     "lerna": "3",
-    "@midwayjs/faas": "^0.2.76",
-    "@midwayjs/faas-dev-pack": "^0.2.76",
+    "@midwayjs/faas": "^0.3.0",
+    "@midwayjs/faas-dev-pack": "^0.3.0",
+    "@midwayjs/serverless-invoke": "^0.3.0",
     "@types/chai": "^4.1.7",
     "@types/lodash": "^4.14.119",
     "@types/mocha": "^5.2.5",
@@ -23,7 +24,7 @@
     "canary": "sh scripts/publish.sh --canary",
     "beta": "sh scripts/publish.sh --npm-tag beta --force-publish=*",
     "next": "sh scripts/publish.sh --npm-tag next",
-    "release": "rm -f ./packages/.DS*; sh scripts/publish.sh",
+    "release": "rm -f ./packages/.DS*; lerna publish",
     "bootstrap": "rm -f ./packages/.DS*; lerna bootstrap --hoist",
     "clean": "lerna clean --yes; rm -rf ./packages/**/package-lock.json; rm -rf ./packages/**/dist; rm -rf ./packages/**/.nyc_output",
     "updated": "lerna updated",

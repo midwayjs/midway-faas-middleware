@@ -1,9 +1,7 @@
 import { join } from 'path';
 
-module.exports = appInfo => {
+module.exports = (appInfo) => {
   const exports = {} as any;
-
-  exports.middleware = ['staticFile']
 
   /**
    * Static file serve
@@ -14,10 +12,11 @@ module.exports = appInfo => {
    * @property {Number} maxAge - cache max age, default is 0
    * @see https://github.com/koajs/static-cache
    */
-  exports.static = {
+  exports.staticFile = {
     prefix: '/public/',
     dir: join(appInfo.baseDir, '../public'),
     dynamic: true,
+    index: 'index.html',
     preload: false,
     buffer: true,
     maxFiles: 1000,

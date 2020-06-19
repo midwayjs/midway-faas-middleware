@@ -20,8 +20,27 @@ describe('/test/index.test.ts', () => {
       .send({ name: 'zhangting' })
       .expect(200)
       .end((err, res) => {
-        assert(/html/.test(Buffer.from(res.text, 'base64').toString('utf8')))
+        assert(/html/.test(res.text));
         done();
+      });
+  });
+
+  it('static file alias', (done) => {
+    const app = new koa();
+    app.use(
+      useKoaDevPack({
+        functionDir: join(__dirname, './fixtures/base-fn'),
       })
+    );
+    request(app.callback())
+      .get('/public/')
+      .query({
+        action: 'doTest',
+      })
+      .expect(200)
+      .end((err, res) => {
+        assert(/html/.test(res.text));
+        done();
+      });
   });
 });
