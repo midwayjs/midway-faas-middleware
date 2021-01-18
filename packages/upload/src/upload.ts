@@ -27,7 +27,6 @@ export const parseMultipart = async (req: any) => {
   const fields = {};
   const files = [];
   bufferSplit(body, bufferSeparator).forEach(buf => {
-    console.log('buf', buf);
     const [headerBuf, data] = bufferSplit(buf, headSeparator, 2);
     const head = parseHead(headerBuf);
     if (!head['content-disposition']) {
