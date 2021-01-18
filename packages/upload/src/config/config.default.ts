@@ -1,5 +1,7 @@
 module.exports = (appInfo) => {
   const exports = {} as any;
-  exports.upload = {}
+  exports.upload = {
+    mod: 'stream', // buffer/stream
+  }
   return exports;
 };
