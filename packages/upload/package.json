@@ -1,0 +1,23 @@
+{
+  "name": "@midwayjs/faas-middleware-upload",
+  "version": "0.0.1",
+  "main": "dist/index",
+  "typings": "dist/index.d.ts",
+  "dependencies": {},
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "midway-bin": "2",
+    "@midwayjs/decorator": "2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "midway-bin build -c",
+    "test": "NODE_ENV=test midway-bin test --ts --full-trace",
+    "cov": "NODE_ENV=unittest midway-bin cov --ts",
+    "clean": "midway-bin clean",
+    "autod": "midway-bin autod"
+  }
+}
