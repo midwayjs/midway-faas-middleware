@@ -14,9 +14,6 @@ export class StaticFile {
     return async (ctx, next) => {
       const { mod } = this.upload || { mod: 'buffer' };
       const requireId = `upload_${Date.now()}.${Math.random()}`;
-      if (ctx.request && ctx.request.req) {
-        ctx.request.req.bodyParsed = true;
-      }
       const data = await parseMultipart(ctx.request);
       if (data) {
         ctx.files = mod === 'buffer' ? data.files : data.files.map((file, index) => {

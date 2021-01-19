@@ -17,7 +17,7 @@ export const parseMultipart = async (req: any) => {
     return;
   }
 
-  let body = req.body;
+  let body = req.req ? req.req.body : req.body;
   if (typeof body === 'string') {
     body = Buffer.from(body);
   }
