@@ -4,9 +4,10 @@ import { resolve, extname } from 'path';
 import { writeFileSync } from 'fs';
 import { parseMultipart } from './upload';
 import { Readable } from 'stream';
+export { ContainerConfiguration as Configuration } from './configuration';
 @Provide('upload')
 @Scope(ScopeEnum.Singleton)
-export class StaticFile {
+export class Upload {
   @Config('upload')
   upload;
 
