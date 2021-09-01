@@ -117,7 +117,7 @@ export const parseHead = (headBuf: Buffer) => {
       continue;
     }
     const name = matched[1].toLowerCase();
-    const value = matched[2].replace(
+    const value = matched[2] ? matched[2].replace(
       /&#(\d+);/g,
       (origin: string, code: string) => {
         try {
@@ -126,7 +126,7 @@ export const parseHead = (headBuf: Buffer) => {
           return origin;
         }
       }
-    );
+    ): '';
     if (name === 'content-disposition') {
       const headCol = {};
       value.split(/;\s+/).forEach((kv: string) => {
